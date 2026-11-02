@@ -1,9 +1,9 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Vcontrol add-on
-version: "1.14.0"
+version: "1.15.0"
 slug: vcontrold
 description: MQTT bridge for Viessmann vcontrold
-url: "https://github.com/Alexandre-io/homeassistant-vcontrol"
+url: "https://github.com/anzimber/homeassistant-vcontrol"
 arch:
   - aarch64
   - amd64
@@ -69,7 +69,7 @@ schema:
   debug: "bool?"
   commands:
     - "str"
-image: "alexandreio/{arch}-homeassistant-vcontrol"
+# Without an image, Supervisor builds the add-on from this repository's Dockerfile.
 usb: true
 apparmor: false
 ports:

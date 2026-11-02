@@ -1,6 +1,6 @@
 # Vcontrol Home Assistant add-on repository
 
-[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FAlexandre-io%2Fhomeassistant-vcontrol)
+[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fanzimber%2Fhomeassistant-vcontrol)
 
 ## Add-ons
 
@@ -33,9 +33,8 @@ bash tests/container_smoke.sh
 ```
 
 Use `BUILD_ARCH=aarch64` on an ARM64 machine. CI builds and tests on native amd64
-and ARM64 runners, then publishes the tested images to the existing Docker Hub
-repositories only after both architectures pass and the extension version changes
-on `main`. Pull requests and documentation-only updates never publish.
+and ARM64 runners. Home Assistant builds the image from this repository when the
+add-on is installed, so this fork does not need upstream Docker Hub credentials.
 `build.yaml` is no longer used; base image and labels live in the Dockerfile.
 Bump `vcontrold/config.yaml` and update `vcontrold/CHANGELOG.md` for each release.
 

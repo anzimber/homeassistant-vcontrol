@@ -10,10 +10,10 @@ LABEL \
     io.hass.type="addon" \
     io.hass.name="Vcontrol add-on" \
     io.hass.description="MQTT bridge for Viessmann vcontrold" \
-    io.hass.url="https://github.com/Alexandre-io/homeassistant-vcontrol" \
+    io.hass.url="https://github.com/anzimber/homeassistant-vcontrol" \
     org.opencontainers.image.title="Home Assistant Add-on: Vcontrol add-on" \
     org.opencontainers.image.description="MQTT bridge for Viessmann vcontrold." \
-    org.opencontainers.image.source="https://github.com/Alexandre-io/homeassistant-vcontrol" \
+    org.opencontainers.image.source="https://github.com/anzimber/homeassistant-vcontrol" \
     org.opencontainers.image.licenses="Apache-2.0"
 
 ENV VCONTROLD_VERSION="v0.98.12"
