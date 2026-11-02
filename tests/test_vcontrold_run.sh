@@ -66,6 +66,7 @@ assert_file_contains "${tmp_dir}/run/2_mqtt.tmpl" '$R2'
 assert_file_contains "${tmp_dir}/run/2_mqtt.tmpl" '$3'
 assert_eq $'getTempA' "$(cat "${tmp_dir}/run/poll_groups/30/commands.txt")" "fast poll group"
 assert_file_contains "${tmp_dir}/run/poll_groups/30/template.tmpl" '$1'
+assert_eq "495" "$(cat "${tmp_dir}/run/poll_groups/30/health_max_age")" "per-group health budget"
 assert_eq $'getError0' "$(cat "${tmp_dir}/run/poll_groups/3600/commands.txt")" "hourly poll group"
 assert_file_contains "${tmp_dir}/run/poll_groups/3600/template.tmpl" '$R1'
 assert_eq $'getTempWWsoll' "$(cat "${tmp_dir}/run/poll_groups/60/commands.txt")" "default refresh poll group"

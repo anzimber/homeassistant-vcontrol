@@ -130,6 +130,9 @@ do
     group_commands="${group_dir}/commands.txt"
     group_template="${group_dir}/template.tmpl"
     printf '%s\n' "${cmd}" >> "${group_commands}.tmp"
+    group_health_max_age=$((3 * (interval + COMMAND_TIMEOUT + 15)))
+    (( group_health_max_age >= 300 )) || group_health_max_age=300
+    printf '%s\n' "${group_health_max_age}" > "${group_dir}/health_max_age"
 
     value_placeholder="\$${group_index}"
     global_placeholder="\$${i}"

@@ -1,5 +1,10 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.15.1
+
+- Retry failed command groups on the default cadence instead of waiting for their full interval.
+- Track health independently for each polling group so stale slow groups are detected.
+
 ## 1.15.0
 
 - Allow an optional per-command polling interval in `command:TYPE:SECONDS` form.

@@ -144,7 +144,9 @@ original XML files are never rewritten.
   continue to use `refresh`. Valid intervals are 1–86400 seconds.
 - The add-on runs due command groups sequentially through one `vclient` publisher;
   it does not start overlapping read cycles. A command group may run later than its
-  configured interval if a previous vcontrold read is still in progress.
+  configured interval if a previous vcontrold read is still in progress. A failed
+  group is retried after the default `refresh` interval; the healthcheck tracks each
+  group's last successful poll independently.
 - `refresh` is the default interval for commands that do not specify one (1–86400 seconds).
   `command_timeout` limits a whole vcontrold read cycle or one setter (1–3600 seconds,
   default 120). Increase it if a large command list or slow device needs more time.
